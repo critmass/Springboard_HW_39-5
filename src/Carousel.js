@@ -16,22 +16,32 @@ function Carousel(props) {
     <div className="Carousel">
       <h1>{props.title}</h1>
       <div className="Carousel-main">
-        <i
-          className="fas fa-chevron-circle-left fa-2x"
-          onClick={goBackward}
-          data-testid="left-arrow"
-        />
+        {
+          cardIdx ? (<i
+            className="fas fa-chevron-circle-left fa-2x"
+            onClick={goBackward}
+            data-testid="left-arrow"
+          />) : (<i
+            className="fas fa-circle fa-2x"
+          />)
+        }
+
         <Card
           caption={card.caption}
           src={card.src}
           currNum={cardIdx + 1}
           totalNum={total}
         />
-        <i
-          className="fas fa-chevron-circle-right fa-2x"
-          onClick={goForward}
-          data-testid="right-arrow"
-        />
+        {
+          (total - cardIdx -1) ? (<i
+            className="fas fa-chevron-circle-right fa-2x"
+            onClick={goForward}
+            data-testid="right-arrow"
+          />) : (<i
+            className="fas fa-circle fa-2x"
+          />)
+        }
+
       </div>
     </div>
   );

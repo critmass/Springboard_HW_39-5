@@ -12,8 +12,7 @@ exports[`renders as the snapshot 1`] = `
       class="Carousel-main"
     >
       <i
-        class="fas fa-chevron-circle-left fa-2x"
-        data-testid="left-arrow"
+        class="fas fa-circle fa-2x"
       />
       <div
         class="Card"

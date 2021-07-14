@@ -48,3 +48,18 @@ it("works when you click on the left arrow", function () {
   expect(queryByAltText("Photo by Pratik Patel on Unsplash")).not.toBeInTheDocument();
 });
 
+it("should have no left arrow on the first picture", () => {
+  const {queryByTestId} = render(<Carousel/>)
+  expect(queryByTestId("left-arrow")).not.toBe()
+})
+
+it("should have no left arrow on the first picture", () => {
+  const {queryByTestId} = render(<Carousel/>)
+
+  // move forward in the carousel
+  const rightArrow = queryByTestId("right-arrow");
+  fireEvent.click(rightArrow);
+  fireEvent.click(rightArrow);
+
+  expect(queryByTestId("right-arrow")).not.toBe()
+})
